@@ -17,7 +17,7 @@ wmic cpu get NumberOfLogicalProcessors
 systeminfo | find "Gesamter physischer Speicher"
 ![Screenshot Host RAM](images/host_ram)
 ```
-##2. Erklärung
+2. Erklärung
 
 Die Virtualisierungssoftware blockiert die Zuweisung über die verfügbaren Ressourcen hinaus.
 
