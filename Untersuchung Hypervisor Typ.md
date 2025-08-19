@@ -12,9 +12,9 @@ Da die Software auf einem bestehenden Betriebssystem läuft, vermuten wir, dass 
 Befehl in Windows (CMD):
 ```cmd
 wmic cpu get NumberOfLogicalProcessors
-![Screenshot Host CPU](images/Screenshot 2025-08-19 102940.png)
+![Screenshot Host CPU](images/host_cpu)
 
 systeminfo | find "Gesamter physischer Speicher"
-![Screenshot Host RAM](images/Screenshot 2025-08-19 103017.png)
+![Screenshot Host RAM](images/host_ram)
 
 
