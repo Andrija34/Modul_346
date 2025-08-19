@@ -12,14 +12,16 @@ Da die Software auf einem bestehenden Betriebssystem läuft, vermuten wir, dass 
 Befehl in Windows (CMD):
 ```cmd
 wmic cpu get NumberOfLogicalProcessors
-![Screenshot Host CPU](images/host_cpu.png)
-
-systeminfo | find "Gesamter physischer Speicher"
-![Screenshot Host RAM](host_ram.png)
 ```
+![alt text](<Screenshot 2025-08-19 102940-1.png>)
+```cmd
+systeminfo | find "Gesamter physischer Speicher"
+```
+![alt text](<Screenshot 2025-08-19 103017.png>)
 2. Erklärung
 
 Die Virtualisierungssoftware blockiert die Zuweisung über die verfügbaren Ressourcen hinaus.
+![alt text](<Screenshot 2025-08-19 104113.png>) ![alt text](<Screenshot 2025-08-19 103259.png>) ![alt text](<Screenshot 2025-08-19 103231.png>)
 
 Grund: Da es sich um einen Hypervisor Typ 2 handelt, werden alle Ressourcen über das Windows-Hostsystem an die VM weitergegeben.
 
