@@ -15,6 +15,8 @@ users:
     shell: /bin/bash
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key
+
+```
 name: Erstellt den Benutzer ubuntu.
 
 sudo: Gibt dem Benutzer volle sudo-Rechte ohne Passwortabfrage.
@@ -28,21 +30,23 @@ shell: Standard-Shell ist /bin/bash.
 ssh_authorized_keys: Erlaubt SSH-Login über den angegebenen Public Key (hier: aws-key).
 
 2. SSH- und Root-Einstellungen
-yaml
-Code kopieren
+```yaml
 ssh_pwauth: false
 disable_root: false
+```
+
 ssh_pwauth: false → Passwort-Authentifizierung über SSH ist deaktiviert (nur Key-basierter Login möglich).
 
 disable_root: false → Root-Login ist erlaubt (wird oft standardmäßig deaktiviert).
 
 3. Paketverwaltung
-yaml
-Code kopieren
+```yaml
 package_update: true
 packages:
   - curl
   - wget
+```
+
 package_update: true → Führt beim Boot ein apt-get update aus, um Paketlisten zu aktualisieren.
 
 packages: Installiert automatisch die angegebenen Pakete:
@@ -65,8 +69,7 @@ Basis-Tools (curl, wget) werden automatisch installiert.
 Beispielverwendung
 Diese Datei wird typischerweise beim Erstellen einer VM über die Cloud-Konsole oder per CLI eingebunden:
 
-bash
-Code kopieren
+```bash
 # Beispiel: VM mit cloud-init Datei starten
 openstack server create \
   --flavor m1.small \
@@ -74,3 +77,4 @@ openstack server create \
   --key-name mykey \
   --user-data cloud-config.yaml \
   my-vm
+```
